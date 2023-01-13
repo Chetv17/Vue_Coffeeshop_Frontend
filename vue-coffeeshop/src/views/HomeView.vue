@@ -1,26 +1,27 @@
 <template>
   <div class='container'>
-    <h1>Menu</h1>
+    <h1>Our Menu</h1>
   <ul>
     <li
       v-for="product in products"
       :key="product.id"
     >
+
+    <div class="menuContainer">
+      <button class='edit' @click="toggleEdit">
       <img class='menuItem' :src="product.image" />
-      <p>{{product.name}}</p>
-      <p>${{product.price}}</p>
-
-      <button class='delete' @click="deleteProduct" :value="product.id">Delete</button>
-
-      <details><summary class="edit">Edit</summary>
+      <p>{{product.name}} | ${{product.price}}</p>
+      <div v-if="toggle"><p class='editbtn'>Edit Menu Item</p>
         <ProductForm
           :productId="product.id"
           :currentName="product.name"
           :currentImage="product.image"
           :currentPrice="product.price" @form-submitted="editProduct"
         />
-      </details>
-
+        <button class='delete' @click="deleteProduct" :value="product.id">Delete</button>
+      </div>
+    </button>
+    </div>
     </li>
   </ul>
   <details><summary>Add Menu Item</summary><ProductForm @form-submitted="createProduct"/>
@@ -37,13 +38,17 @@ export default {
   },
   data: function () {
     return {
-      products: []
+      products: [],
+      toggle: false
     }
   },
   created: function () {
     this.getProducts()
   },
   methods: {
+    toggleEdit: function () {
+      this.toggle = !this.toggle
+    },
     getProducts: function () {
       axios.get(process.env.VUE_APP_API_URL).then(res => {
         console.log(res.data)
