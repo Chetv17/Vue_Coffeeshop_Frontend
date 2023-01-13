@@ -43,30 +43,32 @@ nav a.router-link-exact-active {
 }
 
 .delete {
+  position: relative;
   background: none;
   border: none;
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: lightcoral;
-  width: 50px;
+  width: 25%;
   height: 30px;
   border-radius: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   box-shadow: 1px 1px 1px grey;
 }
 
 .edit {
-  position: relative;
-  left: 48%;
-  text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background-color: lightgreen;
-  width: 50px;
-  height: 20px;
-  padding: 5px;
-  border-radius: 10px;
+  background: none;
+  border: none;
   margin-bottom: 10px;
+  cursor: pointer;
 }
+
+.editbtn {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
+
 li {
   list-style: none;
 }
