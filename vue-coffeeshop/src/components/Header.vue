@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Big Tree Coffee Roasters</h1>
+    <h1 class="header">Big Tree Coffee Roasters</h1>
   </header>
 </template>
 <script>
@@ -10,9 +10,8 @@ export default {
 </script>
 <style scoped>
   header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 20px;
+          position: absolute;
+          top: 0;
+          margin-top: 0;
       }
 </style>
