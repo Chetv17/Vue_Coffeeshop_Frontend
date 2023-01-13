@@ -30,12 +30,13 @@ export default {
 nav {
   padding: 15px 0 0 0;
   position: absolute;
+  top: 50px;
   left: 15px;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: ivory;
 }
 
 nav a.router-link-exact-active {
@@ -86,5 +87,10 @@ li {
   margin-top: 10px;
   border-radius: 10px;
   box-shadow: 1px 1px 1px grey;
+}
+
+.header {
+  margin-top: 0;
+  margin-bottom: 45px;
 }
 </style>
