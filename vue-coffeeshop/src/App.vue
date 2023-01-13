@@ -70,8 +70,16 @@ nav a.router-link-exact-active {
   font-size: 20px;
 }
 
+ul {
+  padding: 0;
+}
+
 li {
   list-style: none;
+}
+
+p {
+  font-size: 20px;
 }
 
 .container {
@@ -92,5 +100,6 @@ li {
 .header {
   margin-top: 0;
   margin-bottom: 45px;
+  padding-left: 5px;
 }
 </style>
