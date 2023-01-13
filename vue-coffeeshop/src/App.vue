@@ -92,5 +92,6 @@ li {
 .header {
   margin-top: 0;
   margin-bottom: 45px;
+  padding-left: 5px;
 }
 </style>
