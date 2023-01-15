@@ -1,7 +1,7 @@
 <template>
-    <form @submit.prevent="handleSubmit">
-      <input type="text" placeholder="name" v-model="name"/>
-      <input type="text" placeholder="image" v-model="image"/>
+    <form @submit.prevent="handleShowSubmit">
+      <input type="text" placeholder="event" v-model="event"/>
+      <input type="text" placeholder="date" v-model="date"/>
       <input type="number" placeholder="price" v-model="price"/>
       <input type="submit"/>
     </form>
@@ -9,34 +9,34 @@
 
 <script>
 export default {
-  name: 'ProductForm',
+  name: 'ShowForm',
   data: function () {
     return {
-      name: '',
-      image: '',
+      event: '',
+      date: '',
       price: 0,
       id: null
     }
   },
   props: {
-    currentName: String,
-    currentImage: String,
+    currentEvent: String,
+    currentDate: String,
     currentPrice: Number,
-    productId: Number
+    showId: Number
   },
   created: function () {
-    if (this.currentName) {
-      this.name = this.currentName
-      this.image = this.currentImage
+    if (this.currentEvent) {
+      this.event = this.currentEvent
+      this.date = this.currentDate
       this.price = this.currentPrice
-      this.id = this.productId
+      this.id = this.showId
     }
   },
   methods: {
-    handleSubmit: function () {
+    handleShowSubmit: function () {
       this.$emit('form-submitted', {
-        name: this.name,
-        image: this.image,
+        event: this.event,
+        date: this.date,
         price: parseInt(this.price),
         id: this.id
       })

@@ -8,7 +8,7 @@
     >
 
     <div class="menuContainer">
-      <button class='edit' @click="toggleEdit">
+      <button class='edit' @dblclick="toggleEdit">
       <img class='menuItem' :src="product.image" />
       <p>{{product.name}} | ${{product.price}}</p>
       <div v-if="toggle"><p class='editbtn'>Edit Menu Item</p>
